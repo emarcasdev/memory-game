@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLASSIC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Irish+Grover&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/lives.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="info-game">
+        <h1>LIVES LIMIT</h1>
+
+        <div class="info">
+          <div class="player">
+            <label for="player">LIVES:</label>
+            <input type="text" id="player" value="USER" readonly />
+          </div>
+          <div class="mark">
+            <label for="mark">LIVES:</label>
+            <input type="number" id="mark" value="5" readonly />
+          </div>
+          <div class="buttons">
+            <a class="bt exit" href="../index.html">EXIT</a>
+            <a class="bt restart" href="#">RESTART</a>
+        </div>        
+        </div>
+      </div>
+
+      <div class="container-tablero">
+        <section class="tablero"></section>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../js/lives.js"></script>
+  </body>
+</html>

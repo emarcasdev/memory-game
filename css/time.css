@@ -1,0 +1,399 @@
+body {
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    background-color: #BBFFBB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-tablero {
+    margin-right: 15%;
+}
+
+h1 {
+    color: #312E2E;
+    font-size: 4rem;
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    grid-column: span 2;
+    margin-bottom: 1.25rem;
+    text-decoration: underline;
+}
+
+/* Estilo del tablero */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 12.5rem); /* Aumentamos las columnas a 12.5rem */
+    grid-gap: 1.5rem; /* Espacio entre las cartas */
+    padding: 2rem; /* Aumentamos el padding */
+    background-color: #293D18; /* Fondo marrón oscuro */
+    border-radius: 1rem;
+    box-shadow: 0.625rem 0.625rem 1.5625rem #3f5f23;
+    justify-self: end; /* Alinea el tablero a la derecha */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 12.5rem; /* Aumentamos la altura de las cartas */
+    cursor: pointer;
+    perspective: 1000px;
+    border-radius: 0.625rem; 
+}
+
+.card img {
+    border-radius: 0.625rem; 
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 0.625rem;
+}
+
+.front {
+    background-color: #BBFFBB; /* Color de las cartas por delante */
+    display: flex;
+    font-size: 3rem; /* Aumentamos el tamaño del símbolo */
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-color: #24923f; /* Color marrón para el reverso */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(0deg);
+}
+
+.card.turned .back {
+    transform: rotateY(180deg);
+}
+
+.card.turned .front {
+    transform: rotateY(0deg);
+}
+
+/* Sección de información */
+.info {
+    background-color: #60AB74;
+    padding: 2rem; /* Aumentamos el padding */
+    border-radius: 0.625rem;
+    box-shadow: 0.3125rem 0.3125rem 0.625rem #4d8d5e;
+    display: grid;
+    grid-template-columns: 1fr; /* Organiza los elementos en dos columnas */
+    grid-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    height: auto;
+    width: auto; /* Aumentamos el ancho */
+    justify-self: start; /* Alinea la info a la izquierda */
+}
+
+.player, .mark {
+    display: flex;
+    align-items: center;
+    font-family: 'Cinzel', serif;
+}
+
+.player label, .mark label {
+    color: #111111;
+    font-weight: bolder;
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+    margin-bottom: 0.3125rem;
+}
+
+/* Inputs alineados en dos columnas */
+#player, #timer {
+    background-color: #A9FFAF; /* Fondo amarillo claro */
+    color: #1c1609;
+    border: none;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+    font-size: 1.5rem; /* Aumentamos el tamaño del texto */
+    padding: 0.45rem;
+    height: auto;
+    width: 10rem; 
+    border-radius: 0.6rem;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+}
+
+.bt {
+    background-color: #7AFF73;
+    color: #000000;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    border-radius: 0.6rem;
+    transition: transform 1s, background-color 1s;
+}
+
+.bt:hover {
+    background-color: #97d194;
+    transition: transform 1s, background-color 1s;
+}
+
+/* MOVILES */
+@media (max-width: 600px) and (max-width: 767px) {
+    body {
+        margin: 0;
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tablero {
+        grid-template-columns: repeat(3, 6.5rem);
+        grid-gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        height: 5rem;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+
+    .container-tablero {
+        margin-right: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        padding: 1rem;
+    }
+
+    #player, #timer {
+        width: 5rem;
+        height: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .player label, .mark label {
+        font-size: 1rem;
+    }
+
+    .bt {
+        padding: 0.2rem;
+        font-size: 1rem;
+    }
+}
+
+/* OTROS */
+@media (min-width: 1000px) {
+    .tablero {
+        grid-template-columns: repeat(4, 8.5rem);
+        grid-gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        height: 9rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+    body {
+        margin: 0;
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tablero {
+        grid-template-columns: repeat(3, 6.5rem);
+        grid-gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        height: 5rem;
+    }
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+
+    .container-tablero {
+        margin-right: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        padding: 1rem;
+    }
+
+    #player, #timer {
+        width: 5rem;
+        height: 0.7rem;
+        font-size: 1rem;
+    }
+
+    .player label, .mark label {
+        font-size: 1rem;
+    }
+
+    .bt {
+        padding: 0.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1050px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .card {
+        height: 5rem;
+        width: 7rem;
+    }
+    
+    .info {
+        padding: 1rem;
+    }
+
+    #player, #timer {
+        width: 7rem;
+        height: 0.8rem;
+        font-size: 1.2rem;
+    }
+
+    .player label, .mark label {
+        font-size: 1.2rem;
+    }
+
+    .bt {
+        padding: 0.4rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* ESCRITORIO */
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .tablero {
+        grid-template-columns: repeat(4, 7rem);
+        grid-gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        height: 9rem;
+    }
+}
+
+  /* Tabletas */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        margin: 0;
+        height: auto;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tablero {
+        grid-template-columns: repeat(3, 10rem);
+        grid-gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        height: 8.5rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .container-tablero {
+        margin-right: 0%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        padding: 1rem;
+    }
+
+    #player, #timer {
+        width: 7rem;
+        height: 1.5rem;
+    }
+
+    .player label, .mark label {
+        font-size: 1.5rem;
+    }
+
+    .bt {
+        padding: 0.5rem;
+        font-size: 1.5rem;
+    }
+  }

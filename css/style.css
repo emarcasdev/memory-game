@@ -1,0 +1,148 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0%;
+    background-color: #C1DDD0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Estilo del título */
+h1 {
+    color: #312E2E;
+    font-size: 4rem;
+    font-family: 'Irish Grover', cursive;
+    text-decoration: underline;
+    font-size: 450%;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+/* Sección para las tarjetas */
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2vh;
+    background-color: #4D5052;
+    padding: 1vw;
+    border-radius: 0.5rem;
+    box-shadow: 1vw 1vw 2vw #303030;
+    margin-bottom: 5%;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vw;
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+/* Colores de fondo de las tarjetas */
+.orange {
+    background-color: #FFA07A;
+}
+
+.green {
+    background-color: #98FB98;
+}
+
+.blue {
+    background-color: #ADD8E6;
+}
+
+.yellow {
+    background-color: #FFFACD;
+}
+
+.orange:hover {
+    background-color: #fd8b5e;
+}
+
+.green:hover {
+    background-color: #6ff86f;
+}
+
+.blue:hover {
+    background-color: #72c9e6;
+}
+
+.yellow:hover {
+    background-color: #fcf087;
+}
+
+/* Estilos de la imagen dentro de la tarjeta */
+.card img {
+    width: 80%;
+    height: auto;
+}
+
+/* Sombra en hover */
+.card:hover {
+    box-shadow: 0.125vw 0.125vw 0.25vw rgba(212, 208, 208, 0.8);
+    cursor: pointer;
+}
+
+/* Adaptar a distintas pantallas */
+@media (max-width: 768px) {
+    section {
+        padding: 3vw;
+    }
+
+    h1 {
+        font-size: 300%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2vw;
+    }
+
+    .card {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1vw;
+    }
+
+    .card {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
